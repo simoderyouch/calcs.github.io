@@ -1,0 +1,318 @@
+body {
+  font-family: "League Spartan", sans-serif;
+  background-color: hsl(222, 26%, 31%);
+  transition: 0.6s;
+}
+body.state2 {
+  background-color: hsl(0, 0%, 90%);
+}
+body.state3 {
+  background-color: hsl(268, 75%, 9%);
+}
+
+.calc {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  left: 50%;
+  row-gap: 20px;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 419px;
+}
+
+.calc .main {
+  display: grid;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(20px, 1fr));
+  gap: 20px 14px;
+  padding: 19px;
+  justify-content: center;
+
+  background-color: hsl(223, 31%, 20%);
+  border-radius: 10px;
+}
+.calc .main.state2,
+.switch.state2 {
+  background-color: hsl(0, 5%, 81%) !important;
+  color: hsl(60, 10%, 19%) !important;
+}
+.calc .main.state3,
+.text.state3,
+.switch.state3 {
+  background-color: hsl(268, 71%, 12%) !important;
+  color: hsl(52, 100%, 62%) !important;
+}
+
+.text.state2 {
+  background-color: hsl(0, 0%, 93%) !important;
+  color: hsl(60, 10%, 19%) !important;
+}
+
+.calc .main button.num,
+.calc .main button.op {
+  width: 80px;
+  height: 50px;
+  border: 0;
+  font-weight: 700;
+  /* margin: auto;*/
+  color: hsl(221, 14%, 31%);
+  font-size: 32px;
+  background-color: hsl(30, 25%, 89%);
+
+  box-shadow: 0px -3px 0px 0px hsl(35, 11%, 61%) inset;
+  -webkit-box-shadow: 0px -3px 0px 0px hsl(35, 11%, 61%) inset;
+  -moz-box-shadow: 0px -3px 0px 0px hsl(35, 11%, 61%) inset;
+  border-radius: 9px;
+  transition: background-color 0.6s;
+}
+.calc .main button.num.state2,
+.calc .main button.op.state2 {
+  color: hsl(60, 10%, 19%) !important;
+  background-color: hsl(45, 7%, 89%);
+  box-shadow: 0px -3px 0px 0px rgb(180 165 151) inset;
+  -webkit-box-shadow: 0px -3px 0px 0px rgb(180 165 151) inset;
+  -moz-box-shadow: 0px -3px 0px 0px rgb(180 165 151) inset;
+  border-radius: 9px;
+}
+.calc .main button.num.state3,
+.calc .main button.op.state3 {
+  color: hsl(52, 100%, 62%) !important;
+  background-color: hsl(268, 47%, 21%);
+  box-shadow: 0px -3px 0px 0px hsl(290, 70%, 36%) inset;
+  -webkit-box-shadow: 0px -3px 0px 0px hsl(290, 70%, 36%) inset;
+  -moz-box-shadow: 0px -3px 0px 0px hsl(290, 70%, 36%) inset;
+  border-radius: 9px;
+}
+.calc .main button.reset.state2,
+.calc .main button.del.state2 {
+  background-color: hsl(185, 42%, 37%);
+  box-shadow: 0px -3px 0px 0px hsl(185, 58%, 25%) inset;
+  -webkit-box-shadow: 0px -3px 0px 0px hsl(185, 58%, 25%) inset;
+  -moz-box-shadow: 0px -3px 0px 0px hsl(185, 58%, 25%) inset;
+  border-radius: 9px;
+}
+.calc .main button.reset.state3,
+.calc .main button.del.state3 {
+  background-color: hsl(281, 89%, 26%);
+  box-shadow: 0px -3px 0px 0px hsl(285, 91%, 52%) inset;
+  -webkit-box-shadow: 0px -3px 0px 0px hsl(285, 91%, 52%) inset;
+  -moz-box-shadow: 0px -3px 0px 0px hsl(285, 91%, 52%) inset;
+  border-radius: 9px;
+}
+.calc .main button.equal.state2 {
+  background-color: hsl(25, 98%, 40%);
+  box-shadow: 0px -3px 0px 0px hsl(25, 99%, 27%) inset;
+  -webkit-box-shadow: 0px -3px 0px 0px hsl(25, 99%, 27%) inset;
+  -moz-box-shadow: 0px -3px 0px 0px hsl(25, 99%, 27%) inset;
+  border-radius: 9px;
+}
+.calc .main button.equal.state3 {
+  background-color: hsl(176, 100%, 44%);
+  color: hsl(198, 20%, 13%);
+  box-shadow: 0px -3px 0px 0px hsl(177, 92%, 70%) inset;
+  -webkit-box-shadow: 0px -3px 0px 0px hsl(177, 92%, 70%) inset;
+  -moz-box-shadow: 0px -3px 0px 0px hsl(177, 92%, 70%) inset;
+  border-radius: 9px;
+}
+.num:hover {
+  background-color: #ffff;
+}
+
+.calc .header h5.state2 {
+  color: hsl(60, 10%, 19%) !important;
+}
+.calc .header h5.state3 {
+  color: hsl(52, 100%, 62%);
+}
+
+.calc .header h5 {
+  color: #eae3db;
+  font-size: 30px;
+  margin: 0;
+}
+:root {
+  touch-action: pan-x pan-y;
+  height: 100%;
+}
+
+.calc .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  margin-bottom: 20px;
+}
+
+.calc .text {
+  height: auto;
+  background-color: hsl(224, 36%, 15%);
+  text-align: right;
+  padding: 25px;
+  color: hsl(0, 0%, 100%);
+  border-radius: 10px;
+  font-weight: 700;
+  word-wrap: break-word;
+  font-size: 43px;
+}
+
+.calc button.reset {
+  grid-column: 1 / 3;
+  width: 180px;
+  font-size: 23px;
+  background-color: hsl(225, 21%, 49%);
+  color: hsl(0, 0%, 100%);
+  box-shadow: 0px -3px 0px 0px hsl(224, 28%, 35%) inset;
+  -webkit-box-shadow: 0px -3px 0px 0px hsl(224, 28%, 35%) inset;
+  -moz-box-shadow: 0px -3px 0px 0px hsl(224, 28%, 35%) inset;
+  border-radius: 9px;
+  height: 50px;
+  font-weight: 700;
+  border: 0;
+  transition: background-color 0.6s;
+}
+
+.calc button.del {
+  font-size: 23px;
+  background-color: hsl(225, 21%, 49%);
+  color: hsl(0, 0%, 100%);
+  box-shadow: 0px -3px 0px 0px hsl(224, 28%, 35%) inset;
+  -webkit-box-shadow: 0px -3px 0px 0px hsl(224, 28%, 35%) inset;
+  -moz-box-shadow: 0px -3px 0px 0px hsl(224, 28%, 35%) inset;
+  border-radius: 9px;
+  font-weight: 700;
+  height: 50px;
+  border: 0;
+  transition: background-color 0.6s;
+}
+
+.calc button.equal {
+  grid-column: 3 / 5;
+  width: 180px;
+  font-size: 23px;
+  font-weight: 700;
+  background-color: hsl(6, 63%, 50%);
+  color: hsl(0, 0%, 100%);
+  box-shadow: 0px -3px 0px 0px hsl(6, 70%, 34%) inset;
+  -webkit-box-shadow: 0px -3px 0px 0px hsl(6, 70%, 34%) inset;
+  -moz-box-shadow: 0px -3px 0px 0px hsl(6, 70%, 34%) inset;
+  border-radius: 9px;
+  height: 50px;
+  border: 0;
+  transition: background-color 0.6s;
+}
+
+.calc button.equal:hover {
+  background-color: #f96c5b;
+}
+
+.calc button.del:hover,
+.calc button.reset:hover {
+  background-color: #a2b3e1;
+}
+
+/*-------------------------------------------------------------*/
+.switch {
+  position: relative;
+  display: flex;
+  background-color: hsl(223, 31%, 20%);
+  justify-content: space-around;
+  height: 22px;
+  width: 65px;
+  padding: 2px;
+  border-radius: 20px;
+}
+
+.switch input {
+  opacity: 0;
+  z-index: 1;
+  width: 21px;
+}
+
+#round {
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  position: absolute;
+
+  top: 50%;
+  transform: translateY(-50%);
+  transition: 0.5s;
+}
+
+#round.state1 {
+  left: 5px;
+  background-color: hsl(6, 63%, 50%);
+}
+
+#round.state2 {
+  left: 25px !important;
+  background-color: hsl(25, 98%, 40%);
+}
+
+#round.state3 {
+  left: 42px !important;
+  background-color: hsl(176, 100%, 44%);
+}
+.sw-flex {
+  display: flex;
+  margin: 0;
+  color: hsl(0, 0%, 100%);
+  font-weight: 400 !important;
+  align-items: end;
+}
+.sw-flex.state2 {
+  color: hsl(60, 10%, 19%);
+}
+.sw-flex.state3 {
+  color: hsl(52, 100%, 62%);
+}
+.sw-flex p {
+  margin: 0 20px 0 0;
+}
+.sw-col {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+.n {
+  display: flex;
+  flex-direction: row;
+  margin: 0;
+  justify-content: space-around;
+  margin-bottom: 7px;
+}
+.n p {
+  margin: 0;
+  font-size: 13px;
+}
+/*------------------------*/
+@media (max-width: 500px) {
+  .calc .main button.num,
+  .calc .main button.op {
+    width: 100% !important;
+    vertical-align: middle;
+    display: inline-block;
+    height: 60px;
+    text-align: center !important;
+    font-size: 27px;
+  }
+  .calc button.equal,
+  .calc button.reset {
+    width: 100% !important;
+    height: 60px;
+    font-size: 20px;
+  }
+  .calc button.del {
+    width: 100% !important;
+    height: 60px;
+    font-size: 20px;
+  }
+  .calc {
+    margin: 0 auto;
+    width: 85vw;
+  }
+  .header {
+    margin-bottom: 0px !important;
+  }
+}
